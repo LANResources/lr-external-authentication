@@ -17,7 +17,7 @@ class Plugin {
    *
    * @const string
    */
-  CONST VERSION = '1.0.0';
+  CONST VERSION = '1.1.0';
 
   /**
    * The plugin name.
@@ -239,7 +239,7 @@ class Plugin {
    * @param string $token the JWT authorization token passed in through a GET variable
    */
   private function get_session_from_token( $token ) {
-    $response = wp_remote_get( $this->external_site_url( $this->options['ext_site_session_path'] ) . "?token=" . $token );
+    $response = wp_remote_get( $this->external_site_url( $this->options['ext_site_session_path'] ) . "?basic=true&token=" . $token );
     if ( 200 == wp_remote_retrieve_response_code( $response ) ) {
       return json_decode( wp_remote_retrieve_body( $response ), true );
     } else {

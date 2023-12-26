@@ -60,5 +60,8 @@ The available keys that you can pass to the method are dependent on the informat
 
 == Changelog ==
 
+= 1.1.0 =
+* Pass `basic=true` param to session endpoint
+
 = 1.0.0 =
 * First public release.
